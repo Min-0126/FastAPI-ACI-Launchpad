@@ -178,6 +178,13 @@ Use the *%AZ%* variables for all Azure commands
   + Register provider: *az provider register --namespace Microsoft.ContainerInstance*
   + Retry *az container* create after it's **Registered**
 
+4. Smoke Test
+    + Local smoke
+```cmd
+GET http://localhost:8000/healthz
+```
+If answer is 200 -> Success
+
 ## Security
 + Keep secrets (ACR password and API keys) out of source control
 + Consider **private networking** and **HTTPS** termination
@@ -190,4 +197,5 @@ email: minha0126@proton.me
 ## Resources
 + [Fundamentals and Deployment Docker](https://www.44bits.io/ko/post/easy-deploy-with-docker)
 + [az is not recognized](https://learn.microsoft.com/en-us/answers/questions/1305373/how-to-fix-the-term-az-is-not-recognized-as-the-na)
+
 

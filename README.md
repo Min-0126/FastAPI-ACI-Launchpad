@@ -1,7 +1,7 @@
 # Fast API -> Docker -> Azure (ACR + ACI)
 
 >Use Docker and Azure to deploy a FastAPI app.
->Build a container image using Docker and copy in Azure Container Registry (ACR), run on Azure Container Instances (ACI), reachable at http://<FQDN>:8000
+>Build a container image using Docker and copy to Azure Container Registry (ACR), run on Azure Container Instances (ACI), reachable at http://<FQDN>:8000
 
 ## Features
 
@@ -76,7 +76,8 @@ CMD ["python", "app.py"]
 ## ACR Setup & Push
 
 **Create ACR (Portal)**: New **Container Registry**, name *azplacr*, **Basic**, region **Korea Central
-** Enable Admin user**: ACR -> **Access keys** -> **Admin user** = **Enable**
+
+**Enable Admin user**: ACR -> **Access keys** -> **Admin user** = **Enable**
 
 **Login, tag, push**:
 ```cmd
@@ -90,7 +91,8 @@ docker push azplacr.azurecr.io/azp1:1
 ```cmd
 az acr repository show-tags -n azplacr --repository azp1 -o table
 ```
-> Expected result is 1
+> Expected result is 1 and 
+> Tag is used for tracking
 
 ## ACI Deployment
 
@@ -197,5 +199,6 @@ email: minha0126@proton.me
 ## Resources
 + [Fundamentals and Deployment Docker](https://www.44bits.io/ko/post/easy-deploy-with-docker)
 + [az is not recognized](https://learn.microsoft.com/en-us/answers/questions/1305373/how-to-fix-the-term-az-is-not-recognized-as-the-na)
+
 
 
